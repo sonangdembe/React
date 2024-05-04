@@ -1,0 +1,31 @@
+
+
+1. What is React.Js?
+-> it is the Js library that is used for making the interactive UI
+
+Difference between the Library and the Framework
+- library is the pre-written collection of the code and used to solve the specific task
+where as,
+- Framework is the pre-written code that is used to provide the structure of the code
+
+
+
+2. Feature
+- It will see the changes and make it ( it will not refresh time and again in the same file)
+
+
+
+3. Arrow function
+- Is is the similar like the functions but in JS E6 they defined by the following ways
+
+syntax :- const myFunction =() =>{
+    //code...
+}
+myFunction();
+
+
+
+4. Spread and Rest operator
+- it is used to split and add the object and array
+
+
