@@ -18,7 +18,10 @@
 
 
 import React from 'react';
+import './index.css'
 import Contact  from "./components/Contact";
+import ContactAdder from './components/ContactAdder';
+
 const App= () =>{
 
   const contacts = [
@@ -40,12 +43,17 @@ const App= () =>{
   ];
   return(
  <>
- <div className= "container"><h3>Contact List</h3>
- <Contact data= {contacts[0]}/>
- <Contact data= {contacts[1]} />
- <Contact data= {contacts[2]}/>
 
+
+ <div className='contact_adder'>
+  <ContactAdder/>
  </div>
+  
+
+<div className='contact_list'>
+  {contacts.map(data=> <Contact data={data}></Contact>)}
+ </div>
+
  </>
   );
 
