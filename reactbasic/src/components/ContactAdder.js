@@ -47,9 +47,10 @@
 
 
 import React, { useState } from 'react'
+import Dummy from './Dummy';
 
 
-const ContactAdder = () => {
+const ContactAdder = (props) => {
 
   const [name, setName] = useState("Sona");
   const [mobile, setMobile] = useState("123456789");
@@ -58,11 +59,17 @@ const ContactAdder = () => {
   const onClickhandler = () => {
 
     const contactData = {name, number: mobile, location }
-  console.log(contactData)
+    props.onContactAdded(contactData);
   }
+
+const dummyClickHandler = ()=>{
+  props.childFunction();
+}
+
   return (
+    <>
     <div className='simpleAdder'>
-      ContactAdder :
+      Contact Adder :
 <br/>
       <input type = "text" value={name} placeholder='contact name' onChange={(e) => setName(e.target.value)}></input>
       <input type = "text" value={mobile} placeholder='mobile no' 
@@ -73,6 +80,8 @@ const ContactAdder = () => {
       <br/>
       <button onClick={onClickhandler}>Click me</button>
       </div>
+      <Dummy onDummyClick ={dummyClickHandler}/>
+      </>
   )
 }
 

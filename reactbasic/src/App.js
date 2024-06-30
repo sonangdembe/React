@@ -41,21 +41,28 @@ const App= () =>{
        location: 'ktm'
     },
   ];
-  return(
+  const addContactData = (contactData) =>{
+    contacts.push(contactData)
+    console.log(contacts)
+  }
+
+  const childFunctionHandler =() =>{
+    alert("grand child was called");
+  }
+
+return(
  <>
-
-
  <div className='contact_adder'>
-  <ContactAdder/>
+  <ContactAdder 
+  onContactAdded={addContactData}
+  childFunction = {childFunctionHandler}
+  />
  </div>
-  
-
 <div className='contact_list'>
   {contacts.map(data=> <Contact data={data}></Contact>)}
  </div>
-
  </>
-  );
+);
 
 };
 
